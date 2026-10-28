@@ -20,7 +20,7 @@ export function generateStudentResultPDF(sub: StudentSubmission) {
   doc.setTextColor(255, 255, 255);
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(13);
-  doc.text('LPI HIDAYATULLAH - SMA AR ROHMAH IIBS', pageWidth / 2, y + 7, { align: 'center' });
+  doc.text('SMA AR ROHMAH IIBS', pageWidth / 2, y + 7, { align: 'center' });
 
   doc.setFontSize(10);
   doc.setFont('helvetica', 'normal');
@@ -149,10 +149,10 @@ export function generateStudentResultPDF(sub: StudentSubmission) {
 
     if (isCorrect) {
       doc.setTextColor(22, 101, 52);
-      doc.text('Benar ✓', 160, y + 3.5);
+      doc.text('Benar', 162, y + 3.5);
     } else {
       doc.setTextColor(185, 28, 28);
-      doc.text('Salah ✗', 160, y + 3.5);
+      doc.text('Salah', 162, y + 3.5);
     }
     doc.setTextColor(30, 41, 59);
     doc.text(`${earned}`, 187, y + 3.5);

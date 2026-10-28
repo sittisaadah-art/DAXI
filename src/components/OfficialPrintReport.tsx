@@ -59,9 +59,6 @@ export const OfficialPrintReport: React.FC<OfficialPrintReportProps> = ({ submis
               AR
             </div>
             <div className="flex-1 px-4">
-              <p className="text-xs uppercase font-extrabold tracking-widest text-emerald-900">
-                Yayasan Lembaga Pendidikan Islam Hidayatullah
-              </p>
               <h2 className="text-lg sm:text-xl font-black uppercase text-slate-900 tracking-tight">
                 SMA Ar Rohmah Islamic International Boarding School
               </h2>
