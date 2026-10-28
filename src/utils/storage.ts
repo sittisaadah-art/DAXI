@@ -1,4 +1,4 @@
-import { StudentSubmission } from '../types';
+import { StudentSubmission, KKM_SCORE } from '../types';
 import { INITIAL_MOCK_SUBMISSIONS } from '../data/mockSubmissions';
 
 const STORAGE_KEY_SUBMISSIONS = 'ar_rohmah_asesmen_submissions_v1';
@@ -37,7 +37,7 @@ export function updateSubmissionScore(
       if (sub.id === id) {
         const merged = { ...sub, ...updatedFields };
         merged.totalScore = merged.scorePG + merged.scoreEssay;
-        merged.isPassed = merged.totalScore >= 75 && !merged.isDisqualified;
+        merged.isPassed = merged.totalScore >= KKM_SCORE && !merged.isDisqualified;
         return merged;
       }
       return sub;

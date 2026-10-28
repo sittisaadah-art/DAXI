@@ -230,19 +230,19 @@ export const QUESTIONS_ESSAY: QuestionEssay[] = [
   },
   {
     id: 2,
-    question: 'Tuliskan pseudocode untuk program yang menentukan ketuntasan belajar siswa: program meminta masukan nilai; jika nilai minimal 75, program menampilkan "Tuntas", selain itu menampilkan "Remedial". Awali dengan START dan akhiri dengan END.',
+    question: 'Tuliskan pseudocode untuk program yang menentukan ketuntasan belajar siswa: program meminta masukan nilai; jika nilai minimal sesuai KKM (nilai >= 78 atau >= 75), program menampilkan "Tuntas", selain itu menampilkan "Remedial". Awali dengan START dan akhiri dengan END.',
     maxPoints: 8,
-    keywords: ['start', 'input', '75', 'tuntas', 'remedial', 'if', 'else', 'end'],
+    keywords: ['start', 'input', 'tuntas', 'remedial', 'if', 'else', 'end'],
     sampleAnswer: `START
     INPUT nilai
-    IF nilai >= 75 THEN
+    IF nilai >= 78 THEN
         PRINT "Tuntas"
     ELSE
         PRINT "Remedial"
     END IF
 END`,
     placeholder: 'START\n    INPUT nilai\n    ...\nEND',
-    helperGuide: 'Pastikan diawali START, menggunakan INPUT, kondisi percabangan IF nilai >= 75, dan diakhiri END.',
+    helperGuide: 'Pastikan diawali START, menggunakan INPUT, kondisi percabangan IF nilai >= 78 (atau 75), dan diakhiri END.',
   },
   {
     id: 3,

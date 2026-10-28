@@ -63,7 +63,7 @@ export const OfficialPrintReport: React.FC<OfficialPrintReportProps> = ({ submis
                 Yayasan Lembaga Pendidikan Islam Hidayatullah
               </p>
               <h2 className="text-lg sm:text-xl font-black uppercase text-slate-900 tracking-tight">
-                SMP Ar Rohmah Islamic International Boarding School
+                SMA Ar Rohmah Islamic International Boarding School
               </h2>
               <p className="text-[11px] text-slate-600">
                 Kampus Pesantren Ar Rohmah IIBS • Dau, Malang / Bogor, Jawa Barat
@@ -83,10 +83,10 @@ export const OfficialPrintReport: React.FC<OfficialPrintReportProps> = ({ submis
         {/* Title */}
         <div className="text-center mb-6">
           <h3 className="text-sm sm:text-base font-extrabold uppercase tracking-wide text-slate-900 underline decoration-emerald-600 underline-offset-4">
-            Lembar Rekapitulasi Hasil Asesmen Harian
+            Lembar Rekapitulasi Hasil Asesmen Harian Siswa
           </h3>
           <p className="text-xs text-slate-600 mt-1">
-            Mata Pelajaran: <strong>Informatika</strong> • Bab 2: <strong>Algoritma Adventure</strong> (Tahun Ajaran 2026/2027)
+            Mata Pelajaran: <strong>Informatika</strong> • Tingkat: <strong>Kelas XI SMA</strong> • Bab 2: <strong>Algoritma Adventure</strong> (Tahun Ajaran 2026/2027)
           </p>
         </div>
 
@@ -134,7 +134,7 @@ export const OfficialPrintReport: React.FC<OfficialPrintReportProps> = ({ submis
         >
           <div className="space-y-1 text-center sm:text-left text-xs">
             <span className="font-bold uppercase tracking-wider text-slate-700">
-              Ringkasan Perolehan Nilai (Standar KKM: 75)
+              Ringkasan Perolehan Nilai (Standar KKM: 78)
             </span>
             <div className="flex flex-wrap items-center gap-4 text-slate-800 pt-1">
               <div>
@@ -163,8 +163,8 @@ export const OfficialPrintReport: React.FC<OfficialPrintReportProps> = ({ submis
               {submission.isDisqualified
                 ? 'DIDISKUALIFIKASI (3X TAB)'
                 : submission.isPassed
-                ? 'TUNTAS (LULUS)'
-                : 'REMEDIAL (BELUM TUNTAS)'}
+                ? 'TUNTAS (>= 78)'
+                : 'REMEDIAL (< 78)'}
             </div>
           </div>
         </div>

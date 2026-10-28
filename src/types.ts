@@ -1,4 +1,6 @@
-export type ClassCategory = 'VIII Akademik' | 'VIII Cambridge' | 'VIII Tahfidz Timteng' | 'XI SMA';
+export type ClassCategory = 'XI SMA';
+
+export const KKM_SCORE = 78;
 
 export interface QuestionPG {
   id: number;
@@ -45,7 +47,7 @@ export interface StudentSubmission {
   scorePG: number; // 0 to 60
   scoreEssay: number; // 0 to 40
   totalScore: number; // 0 to 100
-  isPassed: boolean; // totalScore >= 75
+  isPassed: boolean; // totalScore >= KKM_SCORE (78)
   violationsCount: number;
   violationsLog: ViolationRecord[];
   isDisqualified: boolean;

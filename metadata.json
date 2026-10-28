@@ -1,6 +1,6 @@
 {
-  "name": "Daily Asesmen Informatika - SMP Ar Rohmah IIBS",
-  "description": "Website Daily Asesmen Informatika Bab 2 Algoritma Adventure SMP Ar Rohmah IIBS dengan timer 60 menit, anti-cheating, deteksi tab real-time, kunci layar, nilai otomatis, dan dashboard guru.",
+  "name": "Daily Asesmen Informatika Kelas XI - SMA Ar Rohmah IIBS",
+  "description": "Website Daily Asesmen Informatika Kelas XI SMA Bab 2 Algoritma Adventure SMA Ar Rohmah IIBS dengan KKM 78, timer 60 menit, anti-cheating, deteksi tab real-time, kunci layar, nilai otomatis, dan dashboard guru.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

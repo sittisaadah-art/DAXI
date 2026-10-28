@@ -81,7 +81,7 @@ export const StudentResultModal: React.FC<StudentResultModalProps> = ({
               {submission.isDisqualified
                 ? 'Didiskualifikasi (Pelanggaran Tab)'
                 : submission.isPassed
-                ? 'Selamat! Anda Tuntas KKM'
+                ? 'Selamat! Anda Tuntas KKM 78'
                 : 'Hasil Asesmen Harian Siswa'}
             </h2>
 
@@ -90,7 +90,7 @@ export const StudentResultModal: React.FC<StudentResultModalProps> = ({
             </p>
 
             <p className="text-xs text-slate-400 mt-0.5">
-              Data hasil ujian ini telah langsung masuk dan tersimpan pada Dashboard Guru Informatika.
+              Data hasil ujian ini telah langsung masuk dan tersimpan pada Dashboard Guru Informatika SMA Ar Rohmah IIBS.
             </p>
           </div>
 
@@ -120,7 +120,7 @@ export const StudentResultModal: React.FC<StudentResultModalProps> = ({
                     : 'bg-amber-950 text-amber-300 border border-amber-800'
                 }`}
               >
-                {submission.isDisqualified ? 'DISKUALIFIKASI' : submission.isPassed ? 'TUNTAS (>= 75)' : 'REMEDIAL (< 75)'}
+                {submission.isDisqualified ? 'DISKUALIFIKASI' : submission.isPassed ? 'TUNTAS (>= 78)' : 'REMEDIAL (< 78)'}
               </span>
             </div>
           </div>

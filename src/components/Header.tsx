@@ -52,17 +52,17 @@ export const Header: React.FC<HeaderProps> = ({
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-xs sm:text-sm font-black tracking-wider text-emerald-400 uppercase">
-                    SMP Ar Rohmah IIBS
+                    SMA Ar Rohmah IIBS
                   </span>
                   <span className="text-[10px] bg-emerald-950 text-emerald-300 px-1.5 py-0.5 rounded border border-emerald-700/50 hidden md:inline-block">
-                    Informatika
+                    Informatika Kelas XI
                   </span>
                 </div>
                 <h1 className="text-sm sm:text-base md:text-lg font-bold text-slate-100 leading-tight">
                   Daily Asesmen: Algoritma Adventure
                 </h1>
                 <p className="text-[10px] sm:text-xs text-slate-400 hidden sm:block">
-                  Bab 2 Jelajahi Dunia Pemrograman • Kelas VIII / XI
+                  Bab 2 Jelajahi Dunia Pemrograman • Kelas XI SMA
                 </p>
               </div>
             </div>
@@ -116,7 +116,7 @@ export const Header: React.FC<HeaderProps> = ({
               <div>
                 <h3 className="text-lg font-bold text-white">Portal Guru & Pengawas</h3>
                 <p className="text-xs text-slate-400">
-                  SMP Ar Rohmah Islamic International Boarding School
+                  SMA Ar Rohmah Islamic International Boarding School
                 </p>
               </div>
             </div>

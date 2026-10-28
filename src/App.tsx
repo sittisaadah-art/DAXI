@@ -115,7 +115,7 @@ export default function App() {
         <footer className="border-t border-slate-900 bg-slate-950 py-6 text-center text-xs text-slate-500">
           <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
             <p>
-              © 2026 SMP Ar Rohmah IIBS Malang / Bogor • Daily Asesmen Informatika Bab 2 Algoritma Adventure
+              © 2026 SMA Ar Rohmah IIBS • Daily Asesmen Informatika Kelas XI SMA Bab 2 Algoritma Adventure
             </p>
             <div className="flex items-center gap-4 text-[11px] text-slate-400">
               <span>Sistem Pengawasan Real-Time & Kunci Layar</span>

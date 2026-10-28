@@ -50,11 +50,9 @@ export const TeacherDashboard: React.FC<TeacherDashboardProps> = ({
 
   // Filter logic
   const filteredSubmissions = submissions.filter((sub) => {
-    // Class filter
-    if (selectedClass !== 'all') {
-      if (selectedClass === 'VIII Akademik' && !sub.studentClass.includes('Akademik')) return false;
-      if (selectedClass === 'VIII Cambridge' && !sub.studentClass.includes('Cambridge')) return false;
-      if (selectedClass === 'VIII Tahfidz Timteng' && !sub.studentClass.includes('Tahfidz')) return false;
+    // Class filter (XI SMA)
+    if (selectedClass !== 'all' && sub.studentClass !== selectedClass) {
+      return false;
     }
 
     // Status filter
@@ -180,7 +178,7 @@ export const TeacherDashboard: React.FC<TeacherDashboardProps> = ({
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement('a');
     link.setAttribute('href', encodedUri);
-    link.setAttribute('download', `Rekap_Nilai_Informatika_SMP_Ar_Rohmah_${new Date().toISOString().slice(0, 10)}.csv`);
+    link.setAttribute('download', `Rekap_Nilai_Informatika_Kelas_XI_SMA_Ar_Rohmah_${new Date().toISOString().slice(0, 10)}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -197,10 +195,10 @@ export const TeacherDashboard: React.FC<TeacherDashboardProps> = ({
               <span>Portal Otorisasi Pengawas & Guru Mata Pelajaran</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-              Dashboard Rekapitulasi Asesmen Informatika
+              Dashboard Rekapitulasi Asesmen Informatika Kelas XI
             </h2>
             <p className="text-xs sm:text-sm text-slate-400 mt-1">
-              SMP Ar Rohmah IIBS • Bab 2: Algoritma Adventure • KKM 75
+              SMA Ar Rohmah IIBS • Bab 2: Algoritma Adventure • Kelas XI SMA • Standar KKM 78
             </p>
           </div>
 
@@ -246,7 +244,7 @@ export const TeacherDashboard: React.FC<TeacherDashboardProps> = ({
             <span>Total Santri</span>
           </div>
           <div className="text-2xl font-black text-white font-mono">{totalStudents}</div>
-          <span className="text-[10px] text-slate-500">Mengikuti Asesmen</span>
+          <span className="text-[10px] text-slate-500">Kelas XI SMA</span>
         </div>
 
         <div className="bg-slate-900 border border-slate-800 p-4 rounded-2xl shadow-lg">
@@ -267,7 +265,7 @@ export const TeacherDashboard: React.FC<TeacherDashboardProps> = ({
             {passedStudents}{' '}
             <span className="text-xs font-normal text-slate-400">({passRate}%)</span>
           </div>
-          <span className="text-[10px] text-slate-500">Nilai &gt;= 75</span>
+          <span className="text-[10px] text-slate-500">Nilai &gt;= 78</span>
         </div>
 
         <div className="bg-slate-900 border border-slate-800 p-4 rounded-2xl shadow-lg">
@@ -278,7 +276,7 @@ export const TeacherDashboard: React.FC<TeacherDashboardProps> = ({
           <div className="text-2xl font-black text-amber-400 font-mono">
             {totalStudents - passedStudents}
           </div>
-          <span className="text-[10px] text-slate-500">Nilai &lt; 75</span>
+          <span className="text-[10px] text-slate-500">Nilai &lt; 78</span>
         </div>
 
         <div className="bg-slate-900 border border-slate-800 p-4 rounded-2xl shadow-lg">
@@ -311,7 +309,7 @@ export const TeacherDashboard: React.FC<TeacherDashboardProps> = ({
           <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
             type="text"
-            placeholder="Cari nama santri, NISN, atau kelas..."
+            placeholder="Cari nama santri Kelas XI, NISN, atau kelas..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full bg-slate-800 border border-slate-700 rounded-xl pl-10 pr-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500"
@@ -327,9 +325,7 @@ export const TeacherDashboard: React.FC<TeacherDashboardProps> = ({
             className="bg-slate-800 border border-slate-700 text-xs text-white rounded-xl px-3 py-2 focus:outline-none focus:ring-1 focus:ring-emerald-500"
           >
             <option value="all">Semua Kelas</option>
-            <option value="VIII Akademik">VIII Akademik</option>
-            <option value="VIII Cambridge">VIII Cambridge</option>
-            <option value="VIII Tahfidz Timteng">VIII Tahfidz Timteng</option>
+            <option value="XI SMA">XI SMA</option>
           </select>
         </div>
 

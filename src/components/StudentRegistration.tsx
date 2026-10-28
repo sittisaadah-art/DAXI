@@ -22,27 +22,15 @@ interface StudentRegistrationProps {
 
 const CLASS_OPTIONS: { id: ClassCategory; label: string; desc: string }[] = [
   {
-    id: 'VIII Akademik',
-    label: 'VIII Akademik',
-    desc: 'Kelas Program Unggulan Akademik & Sains',
-  },
-  {
-    id: 'VIII Cambridge',
-    label: 'VIII Cambridge',
-    desc: 'Kelas Program Internasional Kurikulum Cambridge',
-  },
-  {
-    id: 'VIII Tahfidz Timteng',
-    label: 'VIII Tahfidz Timteng',
-    desc: 'Kelas Program Al-Qur\'an & Timur Tengah',
+    id: 'XI SMA',
+    label: 'XI SMA',
+    desc: 'Tingkat Kelas XI SMA Ar Rohmah Islamic International Boarding School',
   },
 ];
 
 export const StudentRegistration: React.FC<StudentRegistrationProps> = ({ onStartExam }) => {
   const [name, setName] = useState('');
-  const [selectedClass, setSelectedClass] = useState<ClassCategory>('VIII Akademik');
-  const [customClass, setCustomClass] = useState('');
-  const [isOtherClass, setIsOtherClass] = useState(false);
+  const [selectedClass] = useState<ClassCategory>('XI SMA');
   const [nisn, setNisn] = useState('');
   const [agreed, setAgreed] = useState(false);
   const [error, setError] = useState('');
@@ -53,7 +41,6 @@ export const StudentRegistration: React.FC<StudentRegistrationProps> = ({ onStar
       setError('Mohon masukkan Nama Lengkap Anda.');
       return;
     }
-    const finalClass = isOtherClass ? customClass.trim() || 'VIII Akademik' : selectedClass;
 
     if (!agreed) {
       setError('Anda harus menyetujui integritas ujian dan aktivasi kunci layar.');
@@ -62,7 +49,7 @@ export const StudentRegistration: React.FC<StudentRegistrationProps> = ({ onStar
 
     onStartExam({
       name: name.trim(),
-      studentClass: finalClass,
+      studentClass: selectedClass,
       nisn: nisn.trim() || `NISN-${Math.floor(100000 + Math.random() * 900000)}`,
     });
   };
@@ -75,19 +62,19 @@ export const StudentRegistration: React.FC<StudentRegistrationProps> = ({ onStar
         <div className="relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-900/60 border border-emerald-500/30 text-emerald-300 text-xs font-semibold mb-4">
             <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Asesmen Harian Resmi Semester Genap 2026/2027</span>
+            <span>Asesmen Harian Khusus Kelas XI SMA • Semester Genap 2026/2027</span>
           </div>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-tight mb-3">
             Algoritma Adventure: <br className="hidden sm:inline" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">
-              Jelajahi Dunia Pemrograman
+              Jelajahi Dunia Pemrograman (Kelas XI SMA)
             </span>
           </h2>
 
           <p className="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed mb-6">
-            Selamat datang di Asesmen Harian Informatika SMP Ar Rohmah IIBS Malang. Uji ketajaman logika,
-            analisis diagram alir (flowchart), pseudocode, dan dasar bahasa Python Anda secara mandiri dan jujur.
+            Selamat datang di Asesmen Harian Informatika Kelas XI SMA Ar Rohmah IIBS. Uji ketajaman logika,
+            analisis diagram alir (flowchart), pseudocode, dan implementasi bahasa Python Anda secara mandiri dan berintegritas tinggi.
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 text-xs">
@@ -116,7 +103,7 @@ export const StudentRegistration: React.FC<StudentRegistrationProps> = ({ onStar
               <Award className="w-5 h-5 text-rose-400 flex-shrink-0" />
               <div>
                 <p className="text-slate-400">Nilai KKM</p>
-                <p className="font-bold text-white">75 (Tuntas)</p>
+                <p className="font-bold text-white">78 (Tuntas)</p>
               </div>
             </div>
           </div>
@@ -178,7 +165,7 @@ export const StudentRegistration: React.FC<StudentRegistrationProps> = ({ onStar
 
             <div className="mt-4 p-3 rounded-xl bg-rose-950/40 border border-rose-800/50 flex items-center gap-2 text-rose-300 text-xs font-medium">
               <AlertTriangle className="w-4 h-4 flex-shrink-0 text-rose-400" />
-              <span>Kerjakanlah dengan jujur dengan mengharap ridho Allah SWT.</span>
+              <span>Kerjakanlah dengan jujur.</span>
             </div>
           </div>
 
@@ -218,76 +205,31 @@ export const StudentRegistration: React.FC<StudentRegistrationProps> = ({ onStar
                 />
               </div>
 
-              {/* Kelas Selection with categories: VIII Akademik, VIII Cambridge, VIII Tahfidz Timteng */}
+              {/* Kelas: XI SMA */}
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
-                  Pilih Kategori Kelas <span className="text-rose-400">*</span>
+                  Kategori Kelas <span className="text-rose-400">*</span>
                 </label>
                 <div className="space-y-2.5">
-                  {CLASS_OPTIONS.map((item) => (
-                    <label
-                      key={item.id}
-                      onClick={() => {
-                        setSelectedClass(item.id);
-                        setIsOtherClass(false);
-                      }}
-                      className={`flex items-start gap-3 p-3.5 rounded-xl border cursor-pointer transition-all ${
-                        !isOtherClass && selectedClass === item.id
-                          ? 'bg-emerald-950/60 border-emerald-500 shadow-md shadow-emerald-950/40 text-white'
-                          : 'bg-slate-800/60 border-slate-700/80 hover:border-slate-600 text-slate-300'
-                      }`}
-                    >
-                      <input
-                        type="radio"
-                        name="classOption"
-                        checked={!isOtherClass && selectedClass === item.id}
-                        onChange={() => {
-                          setSelectedClass(item.id);
-                          setIsOtherClass(false);
-                        }}
-                        className="mt-1 text-emerald-600 focus:ring-emerald-500"
-                      />
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between">
-                          <span className="font-bold text-sm text-white">{item.label}</span>
-                          <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-800 text-emerald-400 border border-slate-700">
-                            SMP Ar Rohmah
-                          </span>
-                        </div>
-                        <p className="text-xs text-slate-400 mt-0.5">{item.desc}</p>
-                      </div>
-                    </label>
-                  ))}
-
-                  {/* Option for XI SMA or Custom Class */}
-                  <label
-                    onClick={() => setIsOtherClass(true)}
-                    className={`flex items-start gap-3 p-3 rounded-xl border cursor-pointer transition-all ${
-                      isOtherClass
-                        ? 'bg-emerald-950/60 border-emerald-500 text-white'
-                        : 'bg-slate-800/40 border-slate-800 hover:border-slate-700 text-slate-400'
-                    }`}
-                  >
+                  <div className="flex items-start gap-3 p-3.5 rounded-xl border bg-emerald-950/60 border-emerald-500 shadow-md shadow-emerald-950/40 text-white">
                     <input
                       type="radio"
-                      name="classOption"
-                      checked={isOtherClass}
-                      onChange={() => setIsOtherClass(true)}
+                      checked={true}
+                      readOnly
                       className="mt-1 text-emerald-600 focus:ring-emerald-500"
                     />
                     <div className="flex-1">
-                      <span className="font-semibold text-xs text-slate-200">Kelas Lainnya / XI SMA</span>
-                      {isOtherClass && (
-                        <input
-                          type="text"
-                          placeholder="Ketik nama kelas (cth: XI SMA IPA 1)"
-                          value={customClass}
-                          onChange={(e) => setCustomClass(e.target.value)}
-                          className="mt-2 w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
-                        />
-                      )}
+                      <div className="flex items-center justify-between">
+                        <span className="font-bold text-sm text-white">XI SMA</span>
+                        <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-800 text-emerald-400 border border-slate-700">
+                          SMA Ar Rohmah IIBS
+                        </span>
+                      </div>
+                      <p className="text-xs text-slate-400 mt-0.5">
+                        Tingkat Kelas XI SMA Ar Rohmah Islamic International Boarding School
+                      </p>
                     </div>
-                  </label>
+                  </div>
                 </div>
               </div>
 

@@ -4,7 +4,7 @@ export const INITIAL_MOCK_SUBMISSIONS: StudentSubmission[] = [
   {
     id: 'sub-2026-001',
     studentName: 'Ahmad Fathi Rayyan',
-    studentClass: 'VIII Akademik',
+    studentClass: 'XI SMA',
     nisn: '22091001',
     startedAt: '2026-10-27 08:00:15',
     submittedAt: '2026-10-27 08:45:20',
@@ -25,7 +25,7 @@ export const INITIAL_MOCK_SUBMISSIONS: StudentSubmission[] = [
       1: 'Start -> Input total_pembayaran dan jumlah_uang_dibayarkan -> Belah ketupat kondisi: jumlah_uang_dibayarkan >= total_pembayaran -> Jika Ya: proses kembalian = jumlah_uang_dibayarkan - total_pembayaran lalu Tampilkan kembalian -> Jika Tidak: Tampilkan "Uang yang dibayarkan kurang" -> End.',
       2: `START
     INPUT nilai
-    IF nilai >= 75 THEN
+    IF nilai >= 78 THEN
         PRINT "Tuntas"
     ELSE
         PRINT "Remedial"
@@ -57,7 +57,7 @@ END`,
     scorePG: 60,
     scoreEssay: 40,
     totalScore: 100,
-    isPassed: true,
+    isPassed: true, // >= 78
     violationsCount: 0,
     violationsLog: [],
     isDisqualified: false,
@@ -67,7 +67,7 @@ END`,
   {
     id: 'sub-2026-002',
     studentName: 'Muhammad Zaki Al-Farisi',
-    studentClass: 'VIII Cambridge',
+    studentClass: 'XI SMA',
     nisn: '22091045',
     startedAt: '2026-10-27 08:02:10',
     submittedAt: '2026-10-27 08:52:30',
@@ -82,13 +82,13 @@ END`,
       7: 'C',
       8: 'B',
       9: 'A',
-      10: 'C', // wrong (chose C instead of D)
+      10: 'C',
     },
     answersEssay: {
       1: 'Diagram dimulai dengan START terminator, masukkan total pembayaran dan uang dibayar. Cek apakah uang cukup dengan simbol decision belah ketupat. Bila cukup hitung kembalian dan cetak, bila kurang cetak pesan kurang. Selesai.',
       2: `START
     INPUT nilai
-    IF nilai >= 75 THEN
+    IF nilai >= 78 THEN
         PRINT "Tuntas"
     ELSE
         PRINT "Remedial"
@@ -115,7 +115,7 @@ END`,
     scorePG: 54,
     scoreEssay: 34,
     totalScore: 88,
-    isPassed: true,
+    isPassed: true, // >= 78
     violationsCount: 1,
     violationsLog: [
       {
@@ -132,7 +132,7 @@ END`,
   {
     id: 'sub-2026-003',
     studentName: 'Abdullah Azzam Al-Hafidz',
-    studentClass: 'VIII Tahfidz Timteng',
+    studentClass: 'XI SMA',
     nisn: '22091078',
     startedAt: '2026-10-27 08:05:00',
     submittedAt: '2026-10-27 08:56:45',
@@ -141,19 +141,19 @@ END`,
       1: 'C',
       2: 'A',
       3: 'C',
-      4: 'A', // wrong
+      4: 'A',
       5: 'D',
       6: 'A',
       7: 'C',
       8: 'B',
-      9: 'B', // wrong
+      9: 'B',
       10: 'D',
     },
     answersEssay: {
       1: 'Start -> Input total bayar dan bayar -> decision apakah bayar >= total bayar? Ya: kembalian = bayar - total. Tampilkan kembalian. Tidak: Tampilkan uang kurang -> Selesai',
       2: `START
     INPUT nilai
-    IF nilai >= 75 THEN
+    IF nilai >= 78 THEN
         PRINT "Tuntas"
     ELSE
         PRINT "Remedial"
@@ -182,7 +182,7 @@ END`,
     scorePG: 48,
     scoreEssay: 36,
     totalScore: 84,
-    isPassed: true,
+    isPassed: true, // >= 78
     violationsCount: 0,
     violationsLog: [],
     isDisqualified: false,
@@ -192,7 +192,7 @@ END`,
   {
     id: 'sub-2026-004',
     studentName: 'Faris Naufal Hidayat',
-    studentClass: 'VIII Cambridge',
+    studentClass: 'XI SMA',
     nisn: '22091052',
     startedAt: '2026-10-27 08:10:00',
     submittedAt: '2026-10-27 08:35:12',
@@ -211,7 +211,7 @@ END`,
     },
     answersEssay: {
       1: 'Masukan uang dan hitung kembalian',
-      2: 'IF nilai 75 tuntas',
+      2: 'IF nilai 78 tuntas',
       3: 'print(3.14 * r)',
       4: 'INPUT r PRINT luas',
       5: 'INPUT bil1, bil2, bil3',

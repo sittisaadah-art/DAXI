@@ -13,7 +13,7 @@ import {
   CheckCircle2,
   Lock,
 } from 'lucide-react';
-import { QuestionPG, QuestionEssay, ViolationRecord, StudentSubmission } from '../types';
+import { QuestionPG, QuestionEssay, ViolationRecord, StudentSubmission, KKM_SCORE } from '../types';
 import { QUESTIONS_PG, QUESTIONS_ESSAY, autoGradeEssay } from '../data/questionsData';
 import { FlowchartViewer } from './FlowchartViewer';
 import { playAlertSound } from '../utils/storage';
@@ -120,7 +120,7 @@ export const ExamScreen: React.FC<ExamScreenProps> = ({ studentInfo, onFinishExa
         totalScore = Math.min(totalScore, 30); // Penalized if disqualified
       }
 
-      const isPassed = totalScore >= 75 && !isDisqualified;
+      const isPassed = totalScore >= KKM_SCORE && !isDisqualified;
 
       const updatedViolations = [...violationsLog];
       if (disqualificationReason) {
@@ -305,11 +305,7 @@ export const ExamScreen: React.FC<ExamScreenProps> = ({ studentInfo, onFinishExa
           {/* Student details */}
           <div className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-xs">
-              {studentInfo.studentClass.includes('Cambridge')
-                ? 'CAM'
-                : studentInfo.studentClass.includes('Tahfidz')
-                ? 'THF'
-                : 'AKD'}
+              XI
             </div>
             <div>
               <p className="text-xs font-bold text-white leading-tight truncate max-w-[140px] sm:max-w-[220px]">

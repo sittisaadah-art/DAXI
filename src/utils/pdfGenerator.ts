@@ -20,14 +20,14 @@ export function generateStudentResultPDF(sub: StudentSubmission) {
   doc.setTextColor(255, 255, 255);
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(13);
-  doc.text('LPI HIDAYATULLAH - SMP AR ROHMAH IIBS', pageWidth / 2, y + 7, { align: 'center' });
+  doc.text('LPI HIDAYATULLAH - SMA AR ROHMAH IIBS', pageWidth / 2, y + 7, { align: 'center' });
 
   doc.setFontSize(10);
   doc.setFont('helvetica', 'normal');
-  doc.text('LEMBAR REKAPITULASI HASIL ASESMEN HARIAN INFORMATIKA', pageWidth / 2, y + 13, { align: 'center' });
+  doc.text('LEMBAR REKAPITULASI HASIL ASESMEN HARIAN INFORMATIKA KELAS XI', pageWidth / 2, y + 13, { align: 'center' });
 
   doc.setFontSize(8);
-  doc.text('Bab 2: Algoritma Adventure - Jelajahi Dunia Pemrograman | Tahun Pelajaran 2026/2027', pageWidth / 2, y + 18, { align: 'center' });
+  doc.text('Bab 2: Algoritma Adventure - Jelajahi Dunia Pemrograman | Kelas XI SMA | Tahun Pelajaran 2026/2027', pageWidth / 2, y + 18, { align: 'center' });
 
   y += 28;
 
@@ -39,7 +39,7 @@ export function generateStudentResultPDF(sub: StudentSubmission) {
   doc.setTextColor(30, 41, 59);
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(9);
-  doc.text('IDENTITAS PESERTA ASESMEN', 14, y + 5);
+  doc.text('IDENTITAS PESERTA ASESMEN (KELAS XI SMA)', 14, y + 5);
 
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(8.5);
@@ -71,7 +71,7 @@ export function generateStudentResultPDF(sub: StudentSubmission) {
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(9);
   doc.setTextColor(15, 23, 42);
-  doc.text('REKAPITULASI NILAI AKHIR (KKM: 75)', 14, y + 6);
+  doc.text('REKAPITULASI NILAI AKHIR (KKM: 78)', 14, y + 6);
 
   // Scores
   doc.setFontSize(8.5);
@@ -90,8 +90,8 @@ export function generateStudentResultPDF(sub: StudentSubmission) {
   const statusLabel = sub.isDisqualified
     ? 'STATUS: TIDAK TUNTAS (DISKUALIFIKASI)'
     : sub.isPassed
-    ? 'STATUS: TUNTAS (LULUS)'
-    : 'STATUS: REMEDIAL (BELUM TUNTAS)';
+    ? 'STATUS: TUNTAS (LULUS KKM 78)'
+    : 'STATUS: REMEDIAL (DI BAWAH KKM 78)';
   doc.text(statusLabel, 130, y + 15);
 
   y += 25;
